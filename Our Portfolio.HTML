@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Portfolio & Project Gallery | Budget Pro Solutions</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#ea580c',
+                            yellow: '#f59e0b',
+                            teal: '#0d9488',
+                            navy: '#042f2e',
+                            dark: '#020617',
+                        },
+                    },
+                    fontFamily: {
+                        display: ['Cormorant Garamond', 'serif'],
+                        body: ['Outfit', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* BASE STYLES */
+        body { font-family: 'Outfit', sans-serif; background: #fafaf8; color: #1a1a1a; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+        
+        /* NOISE TEXTURE FOR PREMIUM FEEL */
+        .noise-overlay::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; }
+
+        /* GRADIENTS & SHIMMERS */
+        .section-dark { background: linear-gradient(135deg, #020617 0%, #042f2e 50%, #020617 100%); }
+        .section-cream { background: #faf9f6; }
+        
+        .shimmer-text { background: linear-gradient(90deg, #ea580c, #f59e0b, #fcd34d, #ea580c); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 5s linear infinite; }
+        @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+        
+        .gradient-text-teal { background: linear-gradient(135deg, #0d9488, #2dd4bf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* ANIMATIONS */
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        @keyframes rotate-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .deco-ring { position: absolute; border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 50%; animation: rotate-slow 35s linear infinite; pointer-events: none; }
+
+        /* CARD & IMAGE EFFECTS */
+        .card-lift { transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease; }
+        .card-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); }
+        .img-reveal { overflow: hidden; position: relative; border-radius: 1.5rem; }
+        .img-reveal img { transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); width: 100%; height: 100%; object-fit: cover; }
+        .img-reveal:hover img { transform: scale(1.08); }
+        .img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(2,6,23,0.9) 0%, transparent 100%); opacity: 0; transition: opacity 0.4s ease; display: flex; flex-direction: column; justify-content: flex-end; padding: 2rem; }
+        .img-reveal:hover .img-overlay { opacity: 1; }
+
+        /* BUTTON SHINE */
+        .btn-shine { position: relative; overflow: hidden; }
+        .btn-shine::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent); transition: left 0.6s ease; }
+        .btn-shine:hover::after { left: 100%; }
+    </style>
+</head>
+
+<body class="noise-overlay text-gray-800">
+
+    <section class="relative min-h-[65vh] section-dark flex items-center overflow-hidden py-20">
+        <div class="deco-ring" style="width:600px;height:600px;top:-100px;left:-150px;border-color:rgba(13,148,136,0.15)"></div>
+        <div class="deco-ring" style="width:400px;height:400px;bottom:-50px;right:-50px;animation-direction:reverse;border-color:rgba(234,88,12,0.15)"></div>
+        
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full text-center mt-10">
+            <div class="inline-flex items-center gap-2 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full border border-brand-orange/30 font-mono text-xs font-bold tracking-widest uppercase mb-6 animate-float">
+                <i class="fas fa-camera-retro"></i> Our Masterpieces
+            </div>
+            
+            <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6" data-aos="fade-up">
+                Proof of <br>
+                <span class="shimmer-text">Excellence.</span>
+            </h1>
+            
+            <p class="text-white/70 text-lg md:text-xl max-w-2xl mx-auto font-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                We don't just make signs; we engineer visual landmarks. Explore our curated gallery of recent installations, vehicle wraps, and corporate transformations across Australia and New Zealand.
+            </p>
+        </div>
+    </section>
+
+    <section class="section-cream py-24 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Featured <span class="gradient-text-teal">Transformations</span></h2>
+                <p class="text-gray-600 max-w-2xl mx-auto text-lg">See how we solve complex branding challenges through innovative design and flawless execution.</p>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 mb-12">
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 card-lift" data-aos="fade-right">
+                    <div class="h-64 sm:h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1554200876-56c2f25224fa?w=800&q=80" alt="Cafe Branding" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-brand-teal/10 text-brand-teal px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider font-mono">Retail & Hospitality</span>
+                            <span class="text-gray-400 text-sm"><i class="fas fa-map-marker-alt"></i> Sydney CBD</span>
+                        </div>
+                        <h3 class="font-display text-3xl font-bold text-gray-900 mb-4">Boutique Cafe Complete Fit-Out</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            <strong>The Challenge:</strong> A high-end cafe needed a complete visual overhaul that respected their heritage architecture while maximizing street visibility. <br><br>
+                            <strong>The Solution:</strong> We deployed matte-finish Cut Vinyl window graphics to eliminate glare, a custom illuminated 3D Aluminium Fascia sign, and rustic wooden A-Frames for daily specials. Foot traffic increased by 34% within the first month.
+                        </p>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-3xl overflow-hidden shadow-xl border border-gray-100 card-lift" data-aos="fade-left">
+                    <div class="h-64 sm:h-80 overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1494976388531-d1058494cdd8?w=800&q=80" alt="Fleet Vehicle Wrap" class="w-full h-full object-cover hover:scale-105 transition-transform duration-700" />
+                    </div>
+                    <div class="p-8">
+                        <div class="flex items-center justify-between mb-4">
+                            <span class="bg-brand-orange/10 text-brand-orange px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wider font-mono">Fleet Branding</span>
+                            <span class="text-gray-400 text-sm"><i class="fas fa-map-marker-alt"></i> Auckland</span>
+                        </div>
+                        <h3 class="font-display text-3xl font-bold text-gray-900 mb-4">Logistics Fleet Wrapping</h3>
+                        <p class="text-gray-600 text-sm leading-relaxed mb-6">
+                            <strong>The Challenge:</strong> A logistics company needed to wrap 15 delivery vans with absolute color consistency across different vehicle models without disrupting their delivery schedule. <br><br>
+                            <strong>The Solution:</strong> Using premium Cast Vinyl, our team worked after-hours to apply full wraps. The high-performance polymeric overlaminate ensures the branding will survive harsh road conditions and daily commercial washing.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">The <span class="text-brand-orange italic">Budget Pro</span> Gallery</h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">Hover over the images to see the signage category. See something you love? Screenshot it and send it to us!</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 auto-rows-[250px]">
+                
+                <div class="img-reveal lg:row-span-2 rounded-3xl shadow-md" data-aos="zoom-in" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=800&q=80" alt="Corporate Signage" />
+                    <div class="img-overlay">
+                        <h4 class="text-white font-bold text-xl mb-1">Corporate 3D Lettering</h4>
+                        <p class="text-brand-teal font-mono text-xs uppercase tracking-widest">Office Fit-Out</p>
+                    </div>
+                </div>
+
+                <div class="img-reveal rounded-3xl shadow-md" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1563298723-dcfebaa392e3?w=800&q=80" alt="LED Neon Sign" />
+                    <div class="img-overlay">
+                        <h4 class="text-white font-bold text-xl mb-1">Custom LED Neon</h4>
+                        <p class="text-brand-orange font-mono text-xs uppercase tracking-widest">Illuminated Signage</p>
+                    </div>
+                </div>
+
+                <div class="img-reveal rounded-3xl shadow-md" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7c83a7f?w=800&q=80" alt="Vinyl Stickers" />
+                    <div class="img-overlay">
+                        <h4 class="text-white font-bold text-xl mb-1">Die-Cut Roll Labels</h4>
+                        <p class="text-brand-yellow font-mono text-xs uppercase tracking-widest">Stickers & Decals</p>
+                    </div>
+                </div>
+
+                <div class="img-reveal lg:col-span-2 rounded-3xl shadow-md" data-aos="zoom-in" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1200&q=80" alt="Large Format Banner" />
+                    <div class="img-overlay">
+                        <h4 class="text-white font-bold text-xl mb-1">Heavy-Duty Event Banners</h4>
+                        <p class="text-white/70 font-mono text-xs uppercase tracking-widest">Large Format Printing</p>
+                    </div>
+                </div>
+
+                <div class="img-reveal rounded-3xl shadow-md" data-aos="zoom-in" data-aos-delay="100">
+                    <img src="https://images.unsplash.com/photo-1497215842964-222b430dc094?w=800&q=80" alt="Frosted Window Graphics" />
+                    <div class="img-overlay">
+                        <h4 class="text-white font-bold text-xl mb-1">Frosted Privacy Film</h4>
+                        <p class="text-brand-teal font-mono text-xs uppercase tracking-widest">Window Graphics</p>
+                    </div>
+                </div>
+
+                <div class="img-reveal rounded-3xl shadow-md" data-aos="zoom-in" data-aos-delay="200">
+                    <img src="https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&q=80" alt="Real Estate Corflute" />
+                    <div class="img-overlay">
+                        <h4 class="text-white font-bold text-xl mb-1">Bulk Real Estate Signs</h4>
+                        <p class="text-brand-orange font-mono text-xs uppercase tracking-widest">5mm Corflute</p>
+                    </div>
+                </div>
+
+                <div class="img-reveal lg:col-span-2 rounded-3xl shadow-md" data-aos="zoom-in" data-aos-delay="0">
+                    <img src="https://images.unsplash.com/photo-1497366754035-f200968a6e72?w=1200&q=80" alt="Aluminium Fascia" />
+                    <div class="img-overlay">
+                        <h4 class="text-white font-bold text-xl mb-1">Architectural ACM Panels</h4>
+                        <p class="text-white/70 font-mono text-xs uppercase tracking-widest">Aluminium Signs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-teal text-center px-6">
+        <div class="max-w-4xl mx-auto" data-aos="zoom-in">
+            <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">Inspired By What You See?</h2>
+            <p class="text-white/90 text-xl font-medium mb-10 max-w-2xl mx-auto">Take a screenshot of your favorite project above and send it to us via WhatsApp. We will tell you exactly how we built it and what it costs.</p>
+            <a href="https://wa.me/64212178989?text=Hi%20Budget%20Pro,%20I%20saw%20a%20project%20in%20your%20portfolio%20and%20want%20a%20similar%20quote." 
+               class="inline-flex items-center gap-3 bg-brand-dark text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-gray-900 transition-all shadow-2xl hover:-translate-y-2">
+                Start Your Masterpiece <i class="fab fa-whatsapp text-green-400"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark pt-20 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <h3 class="font-display font-bold text-3xl text-white mb-6">BUDGET<span class="text-brand-orange">PRO</span></h3>
+                    <p class="text-white/40 text-sm leading-relaxed mb-6">
+                        Specializing in the production, installation, and management of general signage and high-quality visual solutions across AU/NZ to boost brand exposure.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 tracking-wide">Company</h4>
+                    <ul class="space-y-3 text-white/40 text-sm">
+                        <li>Our Services</li>
+                        <li class="text-brand-teal">Portfolio & Gallery</li>
+                        <li>About Us</li>
+                        <li>Contact Us</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 tracking-wide">Get In Touch</h4>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-brand-orange w-4"></i> enquiry@budgetprosolutions.com.au
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-brand-orange w-4"></i> +64 212178989
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-white/30 text-xs font-mono uppercase tracking-widest">&copy; 2026 Budget Pro Solutions. All Rights Reserved.</p>
+                <div class="flex gap-4 text-white/40">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/64212178989?text=Hi!%20I%20have%20a%20question%20about%20your%20Portfolio." 
+       target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 bg-[#25D366] text-white px-5 py-3 rounded-full flex items-center gap-2 shadow-[0_10px_25px_rgba(37,211,102,0.4)] z-50 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(37,211,102,0.6)] transition-all duration-300">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        <span class="font-bold tracking-wide pr-1">Support</span>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
+    </script>
+</body>
+</html>

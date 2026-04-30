@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1.0" />
-    <title>Premium Vinyl & Mesh Banners | Budget Pro Solutions</title>
+    <title>Cut Vinyl Graphics | Budget Pro Solutions</title>
+    <meta name="description" content="Precision cut vinyl lettering, vehicle decals, window lettering, and die-cut logos across Australia and New Zealand." />
     
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -40,6 +41,7 @@
 
     <style>
         /* BASE STYLES */
+        html { scroll-padding-top: 80px; }
         body { font-family: 'Outfit', sans-serif; background: #fafaf8; color: #1a1a1a; overflow-x: hidden; }
         h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
         
@@ -78,33 +80,91 @@
 
 <body class="noise-overlay text-gray-800">
 
-    <section class="relative min-h-[80vh] section-dark flex items-center overflow-hidden py-20">
-        <div class="deco-ring" style="width:600px;height:600px;top:-100px;right:-150px;border-color:rgba(13,148,136,0.15)"></div>
-        <div class="deco-ring" style="width:400px;height:400px;bottom:-50px;left:-50px;animation-direction:reverse;border-color:rgba(234,88,12,0.15)"></div>
+<header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur border-b border-white/10">
+    <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+        <a href="HOME.HTML" class="font-display font-bold text-2xl text-white">BUDGET<span class="text-brand-orange">PRO</span></a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-white/80">
+            <a href="HOME.HTML" class="hover:text-white transition-colors">Home</a>
+            <div class="relative group">
+                <button class="flex items-center gap-1 hover:text-white transition-colors">Services <i class="fas fa-chevron-down text-xs"></i></button>
+                <div class="absolute top-full left-0 mt-2 w-56 bg-brand-dark border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-2">
+                    <a href="Large Format Printing.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Large Format Printing</a>
+                    <a href="Vehicle Signage.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Vehicle Signage & Wraps</a>
+                    <a href="Corporate Signage.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Corporate Signage</a>
+                    <a href="Window Signs.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Window Signs & Graphics</a>
+                    <a href="Vinyl & Mesh Banners.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Vinyl & Mesh Banners</a>
+                    <a href="Cut Vinyl Graphics.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Cut Vinyl Graphics</a>
+                    <a href="Banner Flags.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Banner Flags</a>
+                    <a href="A-Frame Signs.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">A-Frame Signs</a>
+                    <a href="Corflute Signs.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Corflute Signs</a>
+                    <a href="Aluminium Signs.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Aluminium Signs</a>
+                    <a href="Marketing & Menu Signs.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Marketing & Menu Signs</a>
+                    <a href="Stickers & Labels.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Stickers & Labels</a>
+                </div>
+            </div>
+            <a href="Our Portfolio.HTML" class="hover:text-white transition-colors">Portfolio</a>
+            <a href="About Us.HTML" class="hover:text-white transition-colors">About</a>
+            <a href="Contact Us.HTML" class="hover:text-white transition-colors">Contact</a>
+        </nav>
+        <a href="Contact Us.HTML" class="hidden md:inline-flex bg-brand-orange hover:bg-orange-600 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all">Get Quote</a>
+        <button id="mobile-menu-btn" class="md:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
+    </div>
+    <div id="mobile-menu" class="md:hidden hidden bg-brand-dark border-t border-white/10 px-6 py-4">
+        <nav class="flex flex-col gap-3 text-sm font-medium text-white/80">
+            <a href="HOME.HTML" class="hover:text-white transition-colors">Home</a>
+            <span class="text-white/40 text-xs uppercase tracking-wider font-bold mt-2">Services</span>
+            <a href="Large Format Printing.HTML" class="pl-2 hover:text-white transition-colors">Large Format Printing</a>
+            <a href="Vehicle Signage.HTML" class="pl-2 hover:text-white transition-colors">Vehicle Signage & Wraps</a>
+            <a href="Corporate Signage.HTML" class="pl-2 hover:text-white transition-colors">Corporate Signage</a>
+            <a href="Window Signs.HTML" class="pl-2 hover:text-white transition-colors">Window Signs & Graphics</a>
+            <a href="Vinyl & Mesh Banners.HTML" class="pl-2 hover:text-white transition-colors">Vinyl & Mesh Banners</a>
+            <a href="Cut Vinyl Graphics.HTML" class="pl-2 hover:text-white transition-colors">Cut Vinyl Graphics</a>
+            <a href="Banner Flags.HTML" class="pl-2 hover:text-white transition-colors">Banner Flags</a>
+            <a href="A-Frame Signs.HTML" class="pl-2 hover:text-white transition-colors">A-Frame Signs</a>
+            <a href="Corflute Signs.HTML" class="pl-2 hover:text-white transition-colors">Corflute Signs</a>
+            <a href="Aluminium Signs.HTML" class="pl-2 hover:text-white transition-colors">Aluminium Signs</a>
+            <a href="Marketing & Menu Signs.HTML" class="pl-2 hover:text-white transition-colors">Marketing & Menu Signs</a>
+            <a href="Stickers & Labels.HTML" class="pl-2 hover:text-white transition-colors">Stickers & Labels</a>
+            <a href="Our Portfolio.HTML" class="hover:text-white transition-colors mt-2">Portfolio</a>
+            <a href="About Us.HTML" class="hover:text-white transition-colors">About</a>
+            <a href="Contact Us.HTML" class="hover:text-white transition-colors">Contact</a>
+            <a href="Contact Us.HTML" class="bg-brand-orange text-white px-6 py-2.5 rounded-full text-sm font-bold text-center mt-2">Get Quote</a>
+        </nav>
+    </div>
+</header>
+<script>
+    document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+</script>
+
+    <section class="relative min-h-[75vh] section-dark flex items-center overflow-hidden py-20">
+        <div class="deco-ring" style="width:700px;height:700px;top:-200px;left:-200px;border-color:rgba(13,148,136,0.15)"></div>
+        <div class="deco-ring" style="width:400px;height:400px;bottom:-100px;right:-100px;animation-direction:reverse;border-color:rgba(234,88,12,0.15)"></div>
         
         <div class="absolute inset-0 z-0">
-            <img src="https://images.unsplash.com/photo-1540575467063-178a50c2df87?w=1600&q=80" alt="Large Outdoor Banner" class="w-full h-full object-cover opacity-25" />
+            <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=1600&q=80" alt="Precision Vinyl Cutting" class="w-full h-full object-cover opacity-20" />
             <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
         </div>
 
         <div class="max-w-7xl mx-auto px-6 relative z-10 w-full text-center">
-            <div class="inline-flex items-center gap-2 bg-brand-teal/10 text-brand-teal px-4 py-2 rounded-full border border-brand-teal/30 font-mono text-xs font-bold tracking-widest uppercase mb-6 animate-float">
-                <i class="fas fa-scroll"></i> Large Scale Visibility
+            <div class="inline-flex items-center gap-2 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full border border-brand-orange/20 font-mono text-xs font-bold tracking-widest uppercase mb-6 animate-float">
+                <i class="fas fa-cut"></i> Precision Crafted
             </div>
             
             <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6" data-aos="fade-up">
-                Go Big. Go Bold. <br>
-                <span class="shimmer-text">Anywhere.</span>
+                Precision Cut Vinyl <br>
+                <span class="shimmer-text">Lettering & Decals.</span>
             </h1>
             
-            <p class="text-white/70 text-lg md:text-xl max-w-3xl mx-auto mb-10 font-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">
-                The ultimate in flexible, high-impact advertising. From grand-opening vinyl banners spanning the width of your building, to wind-permeable mesh banners wrapped around construction sites. 
+            <p class="text-white/60 text-lg md:text-xl max-w-3xl mx-auto mb-10 font-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                Clean, crisp, and built to last. From vehicle stripes and window lettering to floor graphics and die-cut logos, our precision-cut vinyl solutions deliver professional branding on any surface.
             </p>
             
             <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
-                <a href="https://wa.me/64212178989?text=Hi!%20I%20would%20like%20to%20get%20a%20quote%20for%20a%20Custom%20Banner." 
+                <a href="https://wa.me/64450946690?text=Hi!%20I%20would%20like%20to%20get%20a%20quote%20for%20Cut%20Vinyl%20Graphics." 
                    class="btn-shine bg-brand-teal hover:bg-teal-600 text-white px-10 py-4 rounded-full text-sm font-bold transition-all flex items-center gap-2 shadow-lg shadow-teal-600/30">
-                    <span>Order Your Custom Banner</span>
+                    <span>Get a Cut Vinyl Quote</span>
                     <i class="fas fa-arrow-right"></i>
                 </a>
             </div>
@@ -112,49 +172,38 @@
     </section>
 
     <section class="section-cream py-24 border-b border-gray-200">
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Choosing the Right <span class="gradient-text-teal">Substrate.</span></h2>
-                <p class="text-gray-600 text-lg leading-relaxed max-w-3xl mx-auto">
-                    Ordering a banner isn't just about the size—it's about the environment. Choosing the wrong material can result in shredded signs or torn fences. Here is our expert guide on which material to choose for your project.
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Why Choose <span class="gradient-text-teal">Cut Vinyl?</span></h2>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    Cut vinyl graphics offer unmatched precision and durability for businesses that demand clean, professional branding. Unlike printed vinyl, cut graphics use solid-colour premium films that resist fading and deliver razor-sharp edges.
                 </p>
+                <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                    At Budget Pro Solutions, we use commercial-grade cast vinyl and precision plotting technology to ensure every letter, stripe, and logo is cut to perfection. Whether you need a single company car branded or hundreds of window decals, we deliver consistent quality every time.
+                </p>
+                
+                <div class="grid grid-cols-2 gap-6 bg-white p-6 rounded-2xl shadow-sm border border-gray-100">
+                    <div>
+                        <h4 class="font-bold text-gray-900 text-2xl mb-1 text-brand-teal">7+ Years</h4>
+                        <p class="text-sm text-gray-500 uppercase font-mono tracking-wide">Outdoor Lifespan</p>
+                    </div>
+                    <div>
+                        <h4 class="font-bold text-gray-900 text-2xl mb-1 text-brand-orange">0.1mm</h4>
+                        <p class="text-sm text-gray-500 uppercase font-mono tracking-wide">Cut Precision</p>
+                    </div>
+                </div>
             </div>
 
-            <div class="grid lg:grid-cols-2 gap-12">
-                <div class="bg-white p-10 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden" data-aos="fade-right">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-orange/5 rounded-full blur-2xl -mr-10 -mt-10"></div>
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center border border-brand-orange/20">
-                            <i class="fas fa-layer-group text-2xl text-brand-orange"></i>
-                        </div>
-                        <h3 class="font-display text-3xl font-bold text-gray-900">Heavy-Duty PVC Vinyl</h3>
-                    </div>
-                    <p class="text-gray-600 text-base leading-relaxed mb-6">
-                        The industry standard for brilliant, high-resolution color. Made from solid, non-permeable PVC material, these banners offer the highest print quality and 100% opacity.
-                    </p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-brand-orange mt-1"></i> <span class="text-gray-700"><strong>Best For:</strong> Indoor events, flat walls, retail promotions, and short-term outdoor displays.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-brand-orange mt-1"></i> <span class="text-gray-700"><strong>Visuals:</strong> Photographic print quality; colors pop vibrantly.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-brand-orange mt-1"></i> <span class="text-gray-700"><strong>Wind Rating:</strong> Low. Acts like a sail; must be mounted against a solid surface in windy areas.</span></li>
-                    </ul>
+            <div class="relative" data-aos="fade-left">
+                <div class="img-reveal shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1565193566173-7a0ee3dbe261?w=800&q=80" alt="Cut Vinyl Decals" class="w-full h-auto object-cover" />
                 </div>
-
-                <div class="bg-white p-10 rounded-3xl shadow-xl border border-gray-100 relative overflow-hidden" data-aos="fade-left">
-                    <div class="absolute top-0 right-0 w-32 h-32 bg-brand-teal/5 rounded-full blur-2xl -mr-10 -mt-10"></div>
-                    <div class="flex items-center gap-4 mb-6">
-                        <div class="w-14 h-14 bg-brand-teal/10 rounded-xl flex items-center justify-center border border-brand-teal/20">
-                            <i class="fas fa-wind text-2xl text-brand-teal"></i>
-                        </div>
-                        <h3 class="font-display text-3xl font-bold text-gray-900">Wind-Permeable Mesh</h3>
+                <div class="absolute -bottom-8 -left-8 bg-brand-dark p-6 rounded-2xl shadow-xl border border-white/10 max-w-xs animate-float hidden md:block">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fas fa-shield-alt text-brand-teal text-xl"></i>
+                        <span class="font-bold text-white">Premium Cast Vinyl</span>
                     </div>
-                    <p class="text-gray-600 text-base leading-relaxed mb-6">
-                        Constructed with thousands of tiny holes, mesh banners allow wind and sound to pass right through them. This severely reduces the "sail effect" and prevents structural damage to fences.
-                    </p>
-                    <ul class="space-y-4 mb-8">
-                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-brand-teal mt-1"></i> <span class="text-gray-700"><strong>Best For:</strong> Chain-link fences, construction hoardings, scaffolding, and high-wind outdoor areas.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-brand-teal mt-1"></i> <span class="text-gray-700"><strong>Visuals:</strong> Slightly softer colors due to light passing through the micro-perforations.</span></li>
-                        <li class="flex items-start gap-3"><i class="fas fa-check-circle text-brand-teal mt-1"></i> <span class="text-gray-700"><strong>Wind Rating:</strong> Exceptional. The only safe choice for exposed outdoor fencing.</span></li>
-                    </ul>
+                    <p class="text-white/70 text-sm">Our cast vinyl conforms to curved surfaces and withstands extreme AU/NZ UV exposure without shrinking or peeling.</p>
                 </div>
             </div>
         </div>
@@ -163,34 +212,73 @@
     <section class="bg-white py-24">
         <div class="max-w-7xl mx-auto px-6">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">A Banner For <span class="text-brand-orange italic">Every Occasion</span></h2>
-                <p class="text-gray-500 max-w-2xl mx-auto text-lg">We manufacture banners in any custom size, from small pull-up stands to building-sized wraps.</p>
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Cut Vinyl <span class="text-brand-orange italic">Applications</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">If it has a surface, we can brand it. Discover our most popular precision-cut vinyl solutions.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-lg transition-all card-lift" data-aos="zoom-in" data-aos-delay="0">
-                    <i class="fas fa-arrows-alt-v text-2xl text-brand-teal mb-4"></i>
-                    <h4 class="font-bold text-gray-900 text-lg mb-2">Pull-Up / Roll-Up Banners</h4>
-                    <p class="text-sm text-gray-500 leading-relaxed">The essential trade show tool. A premium printed graphic that retracts safely into a durable aluminium base for easy transport.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-lg transition-all card-lift" data-aos="zoom-in" data-aos-delay="50">
-                    <i class="fas fa-building text-2xl text-brand-orange mb-4"></i>
-                    <h4 class="font-bold text-gray-900 text-lg mb-2">Building Wraps</h4>
-                    <p class="text-sm text-gray-500 leading-relaxed">Massive, ultra-wide printed mesh designed to cover entire buildings or multi-story scaffolding during renovations.</p>
-                </div>
-                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-lg transition-all card-lift" data-aos="zoom-in" data-aos-delay="100">
-                    <i class="fas fa-grip-lines text-2xl text-brand-teal mb-4"></i>
-                    <h4 class="font-bold text-gray-900 text-lg mb-2">Fence Mesh Rolls</h4>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-brand-teal/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-car text-2xl text-brand-teal"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Vehicle Stripes & Decals</h3>
                     <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                        Sold in 50-meter rolls. Unroll and zip-tie directly to temporary fencing to turn a messy construction site into a massive billboard.
+                        Add racing stripes, company logos, or contact details to cars, vans, and trucks. Our auto-grade vinyl protects your paint while delivering bold, lasting branding that survives daily driving and commercial washing.
                     </p>
                 </div>
-                <div class="p-6 rounded-2xl bg-gray-50 border border-gray-100 hover:shadow-lg transition-all card-lift" data-aos="zoom-in" data-aos-delay="150">
-                    <i class="fas fa-lightbulb text-2xl text-brand-orange mb-4"></i>
-                    <h4 class="font-bold text-gray-900 text-lg mb-2">Backlit Banners</h4>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-window-maximize text-2xl text-brand-orange"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Window & Door Lettering</h3>
                     <p class="text-gray-600 text-sm leading-relaxed mb-4">
-                        Printed on specialized translucent vinyl designed specifically to be stretched over large outdoor LED lightboxes for nighttime visibility.
+                        Professional storefront lettering and hours-of-operation decals. We use high-tack adhesive vinyl that bonds securely to glass and painted frames, with clean removal when it's time to update your messaging.
                     </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-brand-yellow/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shoe-prints text-2xl text-brand-yellow"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Floor & Wall Graphics</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Transform floors and walls into branded spaces. Our floor vinyl includes a textured anti-slip overlaminate for safety, while wall decals use low-tack options for easy repositioning in retail and office environments.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-brand-navy/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-sun text-2xl text-brand-navy"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Reflective & Specialty Vinyl</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Need visibility at night? Our reflective vinyl bounces headlights back to drivers, making it perfect for emergency vehicles, safety signage, and fleet branding that works 24/7. We also offer metallic and glitter finishes.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-teal/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shapes text-2xl text-brand-teal"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Die-Cut Logos</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Your logo, cut exactly to shape with no background. Perfect for product labeling, equipment branding, and premium packaging. We can produce die-cut decals from 10mm up to 1200mm in any colour from the standard palette.
+                    </p>
+                </div>
+
+                <div class="bg-brand-dark rounded-3xl p-8 border border-white/10 card-lift relative overflow-hidden text-white" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-teal-900/40 via-transparent to-transparent"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 border border-white/20">
+                            <i class="fas fa-palette text-2xl text-white"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold mb-3">Custom Colour Matching</h3>
+                        <p class="text-white/60 text-sm leading-relaxed mb-6">
+                            We stock over 80 standard vinyl colours and offer Pantone-matched specialty films for strict brand consistency. If you have corporate colour guidelines, we will hit them precisely.
+                        </p>
+                        <a href="Contact Us.HTML" class="text-brand-teal font-bold text-sm hover:underline">Request a Colour Chart &rarr;</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -199,41 +287,30 @@
     <section class="section-dark py-24 relative overflow-hidden">
         <div class="max-w-7xl mx-auto px-6 relative z-10">
             <div class="text-center mb-16" data-aos="fade-up">
-                <h2 class="font-display text-4xl lg:text-5xl font-bold text-white mb-4">Industrial-Grade <span class="text-brand-orange">Finishing Options</span></h2>
-                <p class="text-white/60 max-w-2xl mx-auto text-lg">A banner is only as strong as its edges. We offer custom finishing to ensure your banner mounts perfectly and survives heavy weather.</p>
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-white mb-4">The Budget Pro <span class="text-brand-teal">Cutting Process</span></h2>
+                <p class="text-white/60 max-w-2xl mx-auto text-lg">Precision requires process. Here is how we guarantee flawless results on every cut.</p>
             </div>
 
-            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
-                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm card-lift" data-aos="zoom-in" data-aos-delay="0">
-                    <div class="w-16 h-16 rounded-full bg-white/10 mx-auto flex items-center justify-center mb-4 border border-white/20">
-                        <i class="fas fa-circle-notch text-2xl text-brand-teal"></i>
-                    </div>
-                    <h4 class="text-white font-bold text-xl mb-3">Welded Hems & Eyelets</h4>
-                    <p class="text-white/60 text-sm leading-relaxed">The edges are heat-welded (not just folded) to double the thickness. Nickel or brass eyelets are punched every 500mm for easy zip-tying.</p>
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm card-lift" data-aos="zoom-in" data-aos-delay="0">
+                    <div class="w-12 h-12 rounded-full bg-brand-orange text-white flex items-center justify-center font-bold mx-auto mb-4">1</div>
+                    <h4 class="text-white font-bold text-lg mb-2">Design & Vectorise</h4>
+                    <p class="text-white/50 text-sm">We convert your artwork into precise vector paths optimised for blade cutting, ensuring smooth curves and sharp corners.</p>
                 </div>
-                
-                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm card-lift" data-aos="zoom-in" data-aos-delay="100">
-                    <div class="w-16 h-16 rounded-full bg-white/10 mx-auto flex items-center justify-center mb-4 border border-white/20">
-                        <i class="fas fa-slash text-2xl text-brand-orange"></i>
-                    </div>
-                    <h4 class="text-white font-bold text-xl mb-3">Ropes & Tails</h4>
-                    <p class="text-white/60 text-sm leading-relaxed">Heavy-duty nylon rope is stitched directly into the top and bottom hems, leaving 2-meter "tails" extending from the corners for tying between poles.</p>
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm card-lift" data-aos="zoom-in" data-aos-delay="100">
+                    <div class="w-12 h-12 rounded-full bg-brand-teal text-white flex items-center justify-center font-bold mx-auto mb-4">2</div>
+                    <h4 class="text-white font-bold text-lg mb-2">Precision Plotting</h4>
+                    <p class="text-white/50 text-sm">Our commercial plotters cut through the vinyl face layer without damaging the backing paper, achieving 0.1mm accuracy.</p>
                 </div>
-
-                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm card-lift" data-aos="zoom-in" data-aos-delay="200">
-                    <div class="w-16 h-16 rounded-full bg-white/10 mx-auto flex items-center justify-center mb-4 border border-white/20">
-                        <i class="fas fa-bars text-2xl text-brand-yellow"></i>
-                    </div>
-                    <h4 class="text-white font-bold text-xl mb-3">Rod Pockets</h4>
-                    <p class="text-white/60 text-sm leading-relaxed">A sleeve is welded into the top and/or bottom edge, allowing a solid pole to slide through. Perfect for over-street banners or premium indoor hanging.</p>
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm card-lift" data-aos="zoom-in" data-aos-delay="200">
+                    <div class="w-12 h-12 rounded-full bg-brand-yellow text-white flex items-center justify-center font-bold mx-auto mb-4">3</div>
+                    <h4 class="text-white font-bold text-lg mb-2">Weeding & Masking</h4>
+                    <p class="text-white/50 text-sm">Excess vinyl is hand-weeded by our technicians, then covered with transfer tape for easy, bubble-free application.</p>
                 </div>
-
-                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm card-lift" data-aos="zoom-in" data-aos-delay="300">
-                    <div class="w-16 h-16 rounded-full bg-white/10 mx-auto flex items-center justify-center mb-4 border border-white/20">
-                        <i class="fas fa-border-style text-2xl text-brand-navy"></i>
-                    </div>
-                    <h4 class="text-white font-bold text-xl mb-3">Kedar Edging</h4>
-                    <p class="text-white/60 text-sm leading-relaxed">A thick, corded edging is stitched to the banner, allowing it to slide flawlessly into aluminium tracking rails (sail-track) for a drum-tight finish on trucks or walls.</p>
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm card-lift" data-aos="zoom-in" data-aos-delay="300">
+                    <div class="w-12 h-12 rounded-full bg-brand-navy text-white flex items-center justify-center font-bold mx-auto mb-4">4</div>
+                    <h4 class="text-white font-bold text-lg mb-2">Quality Check</h4>
+                    <p class="text-white/50 text-sm">Every decal is inspected under magnification for edge quality and alignment before being safely packaged for delivery or install.</p>
                 </div>
             </div>
         </div>
@@ -241,11 +318,11 @@
 
     <section class="py-24 bg-brand-teal text-center px-6">
         <div class="max-w-4xl mx-auto" data-aos="zoom-in">
-            <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">Need Massive Visibility?</h2>
-            <p class="text-white/90 text-xl font-medium mb-10 max-w-2xl mx-auto">Send us your exact dimensions and finishing requirements (eyelets, ropes, etc.), and we will provide a fast, highly competitive quote.</p>
-            <a href="https://wa.me/64212178989?text=Hi%20Budget%20Pro,%20I%20need%20a%20quote%20for%20a%20Vinyl/Mesh%20Banner." 
+            <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">Ready for Precision Branding?</h2>
+            <p class="text-white/90 text-xl font-medium mb-10 max-w-2xl mx-auto">Send us your logo or lettering requirements and we will provide a fast quote with material recommendations tailored to your surface and environment.</p>
+            <a href="https://wa.me/64450946690?text=Hi%20Budget%20Pro,%20I%20need%20a%20quote%20for%20Cut%20Vinyl%20Graphics." 
                class="inline-flex items-center gap-3 bg-brand-dark text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-gray-900 transition-all shadow-2xl hover:-translate-y-2">
-                Request a Banner Quote <i class="fab fa-whatsapp text-green-400"></i>
+                Request a Vinyl Quote <i class="fab fa-whatsapp text-green-400"></i>
             </a>
         </div>
     </section>
@@ -254,7 +331,8 @@
         <div class="max-w-7xl mx-auto px-6">
             <div class="grid md:grid-cols-3 gap-12 mb-16">
                 <div>
-                    <h3 class="font-display font-bold text-3xl text-white mb-6">BUDGET<span class="text-brand-orange">PRO</span></h3>
+                    <!-- TODO: Replace with <img src="logo.png" alt="Budget Pro Solutions" class="h-8"> -->
+                    <a href="HOME.HTML" class="font-display font-bold text-3xl text-white mb-6 inline-block">BUDGET<span class="text-brand-orange">PRO</span></a>
                     <p class="text-white/40 text-sm leading-relaxed mb-6">
                         Specializing in the production, installation, and management of general signage and high-quality visual solutions across AU/NZ to boost brand exposure.
                     </p>
@@ -262,20 +340,34 @@
                 <div>
                     <h4 class="text-white font-bold mb-6 tracking-wide">Solutions</h4>
                     <ul class="space-y-3 text-white/40 text-sm">
-                        <li>Large Format Printing</li>
-                        <li>Corflute & Temporary Signs</li>
-                        <li>A-Frame & Sidewalk Signs</li>
-                        <li class="text-brand-teal">Vinyl & Mesh Banners</li>
+                        <li><a href="Large Format Printing.HTML" class="hover:text-white transition-colors">Large Format Printing</a></li>
+                        <li><a href="Vehicle Signage.HTML" class="hover:text-white transition-colors">Vehicle Signage & Wraps</a></li>
+                        <li><a href="Corporate Signage.HTML" class="hover:text-white transition-colors">Corporate Signage</a></li>
+                        <li><a href="Window Signs.HTML" class="hover:text-white transition-colors">Window Signs & Graphics</a></li>
+                        <li><a href="Vinyl & Mesh Banners.HTML" class="hover:text-white transition-colors">Vinyl & Mesh Banners</a></li>
+                        <li><a href="Cut Vinyl Graphics.HTML" class="hover:text-white transition-colors">Cut Vinyl Graphics</a></li>
+                        <li><a href="Banner Flags.HTML" class="hover:text-white transition-colors">Banner Flags</a></li>
+                        <li><a href="A-Frame Signs.HTML" class="hover:text-white transition-colors">A-Frame Signs</a></li>
+                        <li><a href="Corflute Signs.HTML" class="hover:text-white transition-colors">Corflute Signs</a></li>
+                        <li><a href="Aluminium Signs.HTML" class="hover:text-white transition-colors">Aluminium Signs</a></li>
+                        <li><a href="Marketing & Menu Signs.HTML" class="hover:text-white transition-colors">Marketing & Menu Signs</a></li>
+                        <li><a href="Stickers & Labels.HTML" class="hover:text-white transition-colors">Stickers & Labels</a></li>
                     </ul>
                 </div>
                 <div>
                     <h4 class="text-white font-bold mb-6 tracking-wide">Get In Touch</h4>
                     <ul class="space-y-4 text-white/60 text-sm">
                         <li class="flex items-center gap-3">
-                            <i class="fas fa-envelope text-brand-orange w-4"></i> enquiry@budgetprosolutions.com.au
+                            <i class="fas fa-envelope text-brand-orange w-4"></i>
+                            <a href="mailto:enquiry@budgetprosolutions.com.au" class="hover:text-white transition-colors">enquiry@budgetprosolutions.com.au</a>
                         </li>
                         <li class="flex items-center gap-3">
-                            <i class="fas fa-phone text-brand-orange w-4"></i> +64 212178989
+                            <i class="fas fa-phone text-brand-orange w-4"></i>
+                            <a href="tel:+64450946690" class="hover:text-white transition-colors">+64 450946690</a>
+                        </li>
+                        <li class="flex items-start gap-3">
+                            <i class="fas fa-map-marker-alt text-brand-orange w-4 mt-0.5"></i>
+                            <span>Unit 2, 7 Basalt Street, Geebung, QLD 4034</span>
                         </li>
                     </ul>
                 </div>
@@ -284,14 +376,14 @@
             <div class="border-t border-white/10 pt-8 text-center flex flex-col md:flex-row items-center justify-between gap-4">
                 <p class="text-white/30 text-xs font-mono uppercase tracking-widest">&copy; 2026 Budget Pro Solutions. All Rights Reserved.</p>
                 <div class="flex gap-4 text-white/40">
-                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook" class="hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Instagram" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
                 </div>
             </div>
         </div>
     </footer>
 
-    <a href="https://wa.me/64212178989?text=Hi!%20I%20have%20a%20question%20about%20Banners." 
+    <a href="https://wa.me/64450946690?text=Hi!%20I%20have%20a%20question%20about%20Cut%20Vinyl%20Graphics." 
        target="_blank" rel="noopener noreferrer"
        class="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 bg-[#25D366] text-white px-5 py-3 rounded-full flex items-center gap-2 shadow-[0_10px_25px_rgba(37,211,102,0.4)] z-50 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(37,211,102,0.6)] transition-all duration-300">
         <i class="fab fa-whatsapp text-2xl"></i>

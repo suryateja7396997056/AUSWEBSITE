@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Stickers & Labels | Budget Pro Solutions</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#ea580c',
+                            yellow: '#f59e0b',
+                            teal: '#0d9488',
+                            navy: '#042f2e',
+                            dark: '#020617',
+                        },
+                    },
+                    fontFamily: {
+                        display: ['Cormorant Garamond', 'serif'],
+                        body: ['Outfit', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* BASE STYLES */
+        body { font-family: 'Outfit', sans-serif; background: #fafaf8; color: #1a1a1a; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+        
+        /* NOISE TEXTURE FOR PREMIUM FEEL */
+        .noise-overlay::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; }
+
+        /* GRADIENTS & SHIMMERS */
+        .section-dark { background: linear-gradient(135deg, #020617 0%, #042f2e 50%, #020617 100%); }
+        .section-cream { background: #faf9f6; }
+        
+        .shimmer-text { background: linear-gradient(90deg, #ea580c, #f59e0b, #fcd34d, #ea580c); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 5s linear infinite; }
+        @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+        
+        .gradient-text-teal { background: linear-gradient(135deg, #0d9488, #2dd4bf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* ANIMATIONS */
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        @keyframes rotate-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .deco-ring { position: absolute; border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 50%; animation: rotate-slow 35s linear infinite; pointer-events: none; }
+
+        /* CARD EFFECTS */
+        .card-lift { transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease; }
+        .card-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); }
+        .img-reveal { overflow: hidden; border-radius: 1.5rem; }
+        .img-reveal img { transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .img-reveal:hover img { transform: scale(1.06); }
+
+        /* BUTTON SHINE */
+        .btn-shine { position: relative; overflow: hidden; }
+        .btn-shine::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent); transition: left 0.6s ease; }
+        .btn-shine:hover::after { left: 100%; }
+    </style>
+</head>
+
+<body class="noise-overlay text-gray-800">
+
+    <section class="relative min-h-[75vh] section-dark flex items-center overflow-hidden py-20">
+        <div class="deco-ring" style="width:600px;height:600px;top:-150px;right:-150px;border-color:rgba(13,148,136,0.15)"></div>
+        <div class="deco-ring" style="width:350px;height:350px;bottom:-50px;left:-50px;animation-direction:reverse;border-color:rgba(234,88,12,0.15)"></div>
+        
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1586528116311-ad8ed7c83a7f?w=1600&q=80" alt="Custom Stickers and Labels" class="w-full h-full object-cover opacity-20" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full text-center">
+            <div class="inline-flex items-center gap-2 bg-brand-teal/10 text-brand-teal px-4 py-2 rounded-full border border-brand-teal/20 font-mono text-xs font-bold tracking-widest uppercase mb-6 animate-float">
+                <i class="fas fa-sticky-note"></i> Custom Brand Graphics
+            </div>
+            
+            <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6" data-aos="fade-up">
+                Stick In Their Minds. <br>
+                <span class="shimmer-text">Premium Custom Labels.</span>
+            </h1>
+            
+            <p class="text-white/60 text-lg md:text-xl max-w-3xl mx-auto mb-10 font-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                Small graphics, massive impact. From high-end product packaging labels to durable floor decals and outdoor guerrilla marketing stickers, we deliver precision-cut graphics that make your brand stick anywhere.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://wa.me/64212178989?text=Hi!%20I%20would%20like%20a%20quote%20for%20Custom%20Stickers%20and%20Labels." 
+                   class="btn-shine bg-brand-teal hover:bg-teal-600 text-white px-10 py-4 rounded-full text-sm font-bold transition-all flex items-center gap-2 shadow-lg shadow-teal-600/30">
+                    <span>Request a Label Quote</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-cream py-24 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1 relative" data-aos="fade-right">
+                <div class="img-reveal shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1628102491629-77858ab215b2?w=800&q=80" alt="Product Packaging Labels" class="w-full h-auto object-cover" />
+                </div>
+                <div class="absolute -bottom-10 -right-8 bg-white p-6 rounded-2xl shadow-xl border border-gray-100 max-w-xs animate-float hidden md:block">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fas fa-cut text-brand-orange text-xl"></i>
+                        <span class="font-bold text-gray-900">Precision Cut</span>
+                    </div>
+                    <p class="text-gray-500 text-sm">Die-cut or kiss-cut to any custom shape or size your brand requires.</p>
+                </div>
+            </div>
+            
+            <div class="order-1 lg:order-2" data-aos="fade-left">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-6">Your Brand Identity, <span class="gradient-text-teal">On Every Surface.</span></h2>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    A product without a high-quality label is a missed opportunity. Custom stickers and labels are one of the most versatile and cost-effective marketing tools available to modern businesses.
+                </p>
+                <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                    At Budget Pro Solutions, we don't just print cheap paper stickers that fade or peel off. We utilize premium commercial-grade vinyl, sophisticated adhesives, and fade-resistant inks to ensure your branding withstands handling, moisture, and time.
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="border-l-4 border-brand-teal pl-4">
+                        <h4 class="font-bold text-gray-900 text-xl mb-1">Waterproof Options</h4>
+                        <p class="text-sm text-gray-500">Perfect for cosmetics, beverages, and refrigerated products.</p>
+                    </div>
+                    <div class="border-l-4 border-brand-orange pl-4">
+                        <h4 class="font-bold text-gray-900 text-xl mb-1">UV Resistant</h4>
+                        <p class="text-sm text-gray-500">Built to survive outdoor environments without color fading.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">A Sticker For <span class="text-brand-orange italic">Every Purpose</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">From tiny barcode labels to massive floor decals, discover our comprehensive range of adhesive solutions.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-brand-teal/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-box text-2xl text-brand-teal"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Product & Packaging Labels</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Elevate your unboxing experience. We provide custom roll labels and sheet stickers ideal for boxes, jars, bottles, and cosmetic containers. Available in matte, gloss, and clear finishes.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shoe-prints text-2xl text-brand-orange"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Floor Decals</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Transform your floors into wayfinding tools or promotional spaces. Our floor decals feature a specialized anti-slip laminate and aggressive adhesive designed to handle heavy foot traffic safely.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-brand-yellow/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-car-side text-2xl text-brand-yellow"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Bumper & Window Stickers</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Create mini mobile billboards. We use premium outdoor-rated vinyl that resists car washes, rain, and harsh sunlight, ensuring your message stays vibrant on the road.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-brand-navy/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-shapes text-2xl text-brand-navy"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Die-Cut & Kiss-Cut Decals</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Break out of the box with custom shapes. Whether you want a sticker cut exactly to the border of your logo (Die-Cut) or easy-to-peel sheets (Kiss-Cut), we offer absolute precision.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-teal/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-tags text-2xl text-brand-teal"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Industrial & Safety Labels</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Compliance meets durability. We print warning labels, machinery decals, and QR code asset tags using ultra-high-tack adhesives meant to stick to rough, industrial surfaces forever.
+                    </p>
+                </div>
+
+                <div class="bg-brand-dark rounded-3xl p-8 border border-white/10 card-lift relative overflow-hidden text-white" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-teal-900/40 via-transparent to-transparent"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 border border-white/20">
+                            <i class="fas fa-gem text-2xl text-white"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold mb-3">Specialty Finishes</h3>
+                        <p class="text-white/60 text-sm leading-relaxed mb-4">
+                            Want to really stand out? Ask us about our premium specialty finishes, including transparent clear vinyl, metallic foils, and holographic sticker printing for a truly luxurious brand experience.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-white mb-4">The Budget Pro <span class="text-brand-teal">Quality Difference</span></h2>
+                <p class="text-white/60 max-w-2xl mx-auto text-lg">Not all stickers are created equal. Here is what goes into our premium labels.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="0">
+                    <h4 class="text-white font-bold text-xl mb-4 border-b border-white/10 pb-4">1. The Substrate (Vinyl)</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">Unlike cheap paper stickers that tear and dissolve in water, our core labels are printed on premium polymeric vinyl. This ensures flexibility, water resistance, and a tear-proof finish.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="100">
+                    <h4 class="text-white font-bold text-xl mb-4 border-b border-white/10 pb-4">2. The Adhesive</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">We match the glue to your specific need. From removable adhesives for temporary window promos, to high-tack permanent adhesives for machinery and textured walls.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="200">
+                    <h4 class="text-white font-bold text-xl mb-4 border-b border-white/10 pb-4">3. The Over-Laminate</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">To ensure ultimate longevity, outdoor stickers receive a protective clear laminate layer (matte or gloss). This acts as a shield against scratches, harsh chemicals, and UV fading.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 bg-brand-teal text-center px-6">
+        <div class="max-w-4xl mx-auto" data-aos="zoom-in">
+            <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">Ready to make it stick?</h2>
+            <p class="text-white/90 text-xl font-medium mb-10 max-w-2xl mx-auto">Whether you need 100 custom die-cut decals or 10,000 product roll labels, Budget Pro delivers exceptional quality at a competitive price.</p>
+            <a href="https://wa.me/64212178989?text=Hi%20Budget%20Pro,%20I%20have%20details%20for%20a%20Sticker/Label%20project." 
+               class="inline-flex items-center gap-3 bg-brand-dark text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-gray-900 transition-all shadow-2xl hover:-translate-y-2">
+                Get Your Free Label Quote <i class="fab fa-whatsapp text-green-400"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark pt-20 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <h3 class="font-display font-bold text-3xl text-white mb-6">BUDGET<span class="text-brand-orange">PRO</span></h3>
+                    <p class="text-white/40 text-sm leading-relaxed mb-6">
+                        Specializing in the production, installation, and management of general signage and high-quality visual solutions across AU/NZ to boost brand exposure.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 tracking-wide">Solutions</h4>
+                    <ul class="space-y-3 text-white/40 text-sm">
+                        <li>Large Format Printing</li>
+                        <li>Vehicle Signage & Wraps</li>
+                        <li>Illuminated & LED Signs</li>
+                        <li>Custom Stickers & Labels</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 tracking-wide">Get In Touch</h4>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-brand-orange w-4"></i> enquiry@budgetprosolutions.com.au
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-brand-orange w-4"></i> +64 212178989
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-white/30 text-xs font-mono uppercase tracking-widest">&copy; 2026 Budget Pro Solutions. All Rights Reserved.</p>
+                <div class="flex gap-4 text-white/40">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/64212178989?text=Hi!%20I%20have%20a%20question%20about%20Stickers%20%26%20Labels." 
+       target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 bg-[#25D366] text-white px-5 py-3 rounded-full flex items-center gap-2 shadow-[0_10px_25px_rgba(37,211,102,0.4)] z-50 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(37,211,102,0.6)] transition-all duration-300">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        <span class="font-bold tracking-wide pr-1">Support</span>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
+    </script>
+</body>
+</html>

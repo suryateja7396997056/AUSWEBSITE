@@ -3,73 +3,73 @@ import re
 
 # Meta descriptions mapped by filename
 META_DESC = {
-    'HOME.HTML': 'Budget Pro Solutions delivers premium signage, vehicle wraps, banners, and corporate branding across Australia and New Zealand.',
-    'About Us.HTML': 'Learn about Budget Pro Solutions — AU/NZ\'s trusted signage partner for large-format printing, vehicle wraps, and corporate branding.',
-    'Contact Us.HTML': 'Get a free quote for custom signage. Contact Budget Pro Solutions via WhatsApp, phone, or email.',
-    'Our Portfolio.HTML': 'Explore our portfolio of professional signage projects including vehicle wraps, corporate signage, banners, and more across Australia and New Zealand.',
-    'Large Format Printing.HTML': 'Premium large format printing services for banners, exhibitions, and retail displays across Australia and New Zealand.',
-    'Vehicle Signage.HTML': 'Custom vehicle wraps, fleet branding, and vinyl lettering that turn your cars into mobile billboards across AU/NZ.',
-    'Corporate Signage.HTML': 'Executive corporate signage, 3D reception logos, wayfinding, and office fit-outs across Australia and New Zealand.',
-    'Window Signs.HTML': 'Custom window signs, frosted privacy films, and one-way vision graphics for retail and corporate spaces across AU/NZ.',
-    'Vinyl & Mesh Banners.HTML': 'Heavy-duty vinyl and wind-permeable mesh banners for events, construction sites, and outdoor advertising across AU/NZ.',
-    'Cut Vinyl Graphics.HTML': 'Precision cut vinyl lettering, vehicle decals, window lettering, and die-cut logos across Australia and New Zealand.',
-    'Banner Flags.HTML': 'Dynamic outdoor feather and teardrop banner flags designed to catch attention at events and storefronts across AU/NZ.',
-    'A-Frame Signs.HTML': 'Portable A-frame sandwich boards perfect for sidewalk advertising, daily specials, and directional signage across AU/NZ.',
-    'Corflute Signs.HTML': 'Cost-effective corflute signs for real estate, construction, and events across Australia and New Zealand.',
-    'Aluminium Signs.HTML': 'Premium aluminium composite panel signs for architectural fascias, building IDs, and long-term outdoor branding across AU/NZ.',
-    'Marketing & Menu Signs.HTML': 'Sleek menu boards, promotional displays, and marketing signage tailored for retail and hospitality across AU/NZ.',
-    'Stickers & Labels.HTML': 'Custom vinyl stickers, product labels, floor decals, and die-cut decals for businesses across Australia and New Zealand.',
+    'index.html': 'Budget Pro Solutions delivers premium signage, vehicle wraps, banners, and corporate branding across Australia and New Zealand.',
+    'about-us.html': 'Learn about Budget Pro Solutions — AU/NZ\'s trusted signage partner for large-format printing, vehicle wraps, and corporate branding.',
+    'contact-us.html': 'Get a free quote for custom signage. Contact Budget Pro Solutions via WhatsApp, phone, or email.',
+    'our-portfolio.html': 'Explore our portfolio of professional signage projects including vehicle wraps, corporate signage, banners, and more across Australia and New Zealand.',
+    'large-format-printing.html': 'Premium large format printing services for banners, exhibitions, and retail displays across Australia and New Zealand.',
+    'vehicle-signage.html': 'Custom vehicle wraps, fleet branding, and vinyl lettering that turn your cars into mobile billboards across AU/NZ.',
+    'corporate-signage.html': 'Executive corporate signage, 3D reception logos, wayfinding, and office fit-outs across Australia and New Zealand.',
+    'window-signs.html': 'Custom window signs, frosted privacy films, and one-way vision graphics for retail and corporate spaces across AU/NZ.',
+    'vinyl-mesh-banners.html': 'Heavy-duty vinyl and wind-permeable mesh banners for events, construction sites, and outdoor advertising across AU/NZ.',
+    'cut-vinyl-graphics.html': 'Precision cut vinyl lettering, vehicle decals, window lettering, and die-cut logos across Australia and New Zealand.',
+    'banner-flags.html': 'Dynamic outdoor feather and teardrop banner flags designed to catch attention at events and storefronts across AU/NZ.',
+    'a-frame-signs.html': 'Portable A-frame sandwich boards perfect for sidewalk advertising, daily specials, and directional signage across AU/NZ.',
+    'corflute-signs.html': 'Cost-effective corflute signs for real estate, construction, and events across Australia and New Zealand.',
+    'aluminium-signs.html': 'Premium aluminium composite panel signs for architectural fascias, building IDs, and long-term outdoor branding across AU/NZ.',
+    'marketing-menu-signs.html': 'Sleek menu boards, promotional displays, and marketing signage tailored for retail and hospitality across AU/NZ.',
+    'stickers-labels.html': 'Custom vinyl stickers, product labels, floor decals, and die-cut decals for businesses across Australia and New Zealand.',
 }
 
 HEADER_HTML = '''<header class="sticky top-0 z-50 bg-brand-dark/95 backdrop-blur border-b border-white/10">
     <div class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
-        <a href="HOME.HTML" class="font-display font-bold text-2xl text-white">BUDGET<span class="text-brand-orange">PRO</span></a>
+        <a href="index.html" class="font-display font-bold text-2xl text-white">BUDGET<span class="text-brand-orange">PRO</span></a>
         <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-white/80">
-            <a href="HOME.HTML" class="hover:text-white transition-colors">Home</a>
+            <a href="index.html" class="hover:text-white transition-colors">Home</a>
             <div class="relative group">
                 <button class="flex items-center gap-1 hover:text-white transition-colors">Services <i class="fas fa-chevron-down text-xs"></i></button>
                 <div class="absolute top-full left-0 mt-2 w-56 bg-brand-dark border border-white/10 rounded-xl shadow-2xl opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 p-2">
-                    <a href="Large Format Printing.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Large Format Printing</a>
-                    <a href="Vehicle Signage.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Vehicle Signage & Wraps</a>
-                    <a href="Corporate Signage.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Corporate Signage</a>
-                    <a href="Window Signs.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Window Signs & Graphics</a>
-                    <a href="Vinyl & Mesh Banners.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Vinyl & Mesh Banners</a>
-                    <a href="Cut Vinyl Graphics.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Cut Vinyl Graphics</a>
-                    <a href="Banner Flags.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Banner Flags</a>
-                    <a href="A-Frame Signs.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">A-Frame Signs</a>
-                    <a href="Corflute Signs.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Corflute Signs</a>
-                    <a href="Aluminium Signs.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Aluminium Signs</a>
-                    <a href="Marketing & Menu Signs.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Marketing & Menu Signs</a>
-                    <a href="Stickers & Labels.HTML" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Stickers & Labels</a>
+                    <a href="large-format-printing.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Large Format Printing</a>
+                    <a href="vehicle-signage.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Vehicle Signage & Wraps</a>
+                    <a href="corporate-signage.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Corporate Signage</a>
+                    <a href="window-signs.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Window Signs & Graphics</a>
+                    <a href="vinyl-mesh-banners.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Vinyl & Mesh Banners</a>
+                    <a href="cut-vinyl-graphics.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Cut Vinyl Graphics</a>
+                    <a href="banner-flags.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Banner Flags</a>
+                    <a href="a-frame-signs.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">A-Frame Signs</a>
+                    <a href="corflute-signs.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Corflute Signs</a>
+                    <a href="aluminium-signs.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Aluminium Signs</a>
+                    <a href="marketing-menu-signs.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Marketing & Menu Signs</a>
+                    <a href="stickers-labels.html" class="block px-4 py-2 rounded-lg hover:bg-white/10 text-white/80 hover:text-white text-sm">Stickers & Labels</a>
                 </div>
             </div>
-            <a href="Our Portfolio.HTML" class="hover:text-white transition-colors">Portfolio</a>
-            <a href="About Us.HTML" class="hover:text-white transition-colors">About</a>
-            <a href="Contact Us.HTML" class="hover:text-white transition-colors">Contact</a>
+            <a href="our-portfolio.html" class="hover:text-white transition-colors">Portfolio</a>
+            <a href="about-us.html" class="hover:text-white transition-colors">About</a>
+            <a href="contact-us.html" class="hover:text-white transition-colors">Contact</a>
         </nav>
-        <a href="Contact Us.HTML" class="hidden md:inline-flex bg-brand-orange hover:bg-orange-600 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all">Get Quote</a>
+        <a href="contact-us.html" class="hidden md:inline-flex bg-brand-orange hover:bg-orange-600 text-white px-6 py-2.5 rounded-full text-sm font-bold transition-all">Get Quote</a>
         <button id="mobile-menu-btn" class="md:hidden text-white text-2xl"><i class="fas fa-bars"></i></button>
     </div>
     <div id="mobile-menu" class="md:hidden hidden bg-brand-dark border-t border-white/10 px-6 py-4">
         <nav class="flex flex-col gap-3 text-sm font-medium text-white/80">
-            <a href="HOME.HTML" class="hover:text-white transition-colors">Home</a>
+            <a href="index.html" class="hover:text-white transition-colors">Home</a>
             <span class="text-white/40 text-xs uppercase tracking-wider font-bold mt-2">Services</span>
-            <a href="Large Format Printing.HTML" class="pl-2 hover:text-white transition-colors">Large Format Printing</a>
-            <a href="Vehicle Signage.HTML" class="pl-2 hover:text-white transition-colors">Vehicle Signage & Wraps</a>
-            <a href="Corporate Signage.HTML" class="pl-2 hover:text-white transition-colors">Corporate Signage</a>
-            <a href="Window Signs.HTML" class="pl-2 hover:text-white transition-colors">Window Signs & Graphics</a>
-            <a href="Vinyl & Mesh Banners.HTML" class="pl-2 hover:text-white transition-colors">Vinyl & Mesh Banners</a>
-            <a href="Cut Vinyl Graphics.HTML" class="pl-2 hover:text-white transition-colors">Cut Vinyl Graphics</a>
-            <a href="Banner Flags.HTML" class="pl-2 hover:text-white transition-colors">Banner Flags</a>
-            <a href="A-Frame Signs.HTML" class="pl-2 hover:text-white transition-colors">A-Frame Signs</a>
-            <a href="Corflute Signs.HTML" class="pl-2 hover:text-white transition-colors">Corflute Signs</a>
-            <a href="Aluminium Signs.HTML" class="pl-2 hover:text-white transition-colors">Aluminium Signs</a>
-            <a href="Marketing & Menu Signs.HTML" class="pl-2 hover:text-white transition-colors">Marketing & Menu Signs</a>
-            <a href="Stickers & Labels.HTML" class="pl-2 hover:text-white transition-colors">Stickers & Labels</a>
-            <a href="Our Portfolio.HTML" class="hover:text-white transition-colors mt-2">Portfolio</a>
-            <a href="About Us.HTML" class="hover:text-white transition-colors">About</a>
-            <a href="Contact Us.HTML" class="hover:text-white transition-colors">Contact</a>
-            <a href="Contact Us.HTML" class="bg-brand-orange text-white px-6 py-2.5 rounded-full text-sm font-bold text-center mt-2">Get Quote</a>
+            <a href="large-format-printing.html" class="pl-2 hover:text-white transition-colors">Large Format Printing</a>
+            <a href="vehicle-signage.html" class="pl-2 hover:text-white transition-colors">Vehicle Signage & Wraps</a>
+            <a href="corporate-signage.html" class="pl-2 hover:text-white transition-colors">Corporate Signage</a>
+            <a href="window-signs.html" class="pl-2 hover:text-white transition-colors">Window Signs & Graphics</a>
+            <a href="vinyl-mesh-banners.html" class="pl-2 hover:text-white transition-colors">Vinyl & Mesh Banners</a>
+            <a href="cut-vinyl-graphics.html" class="pl-2 hover:text-white transition-colors">Cut Vinyl Graphics</a>
+            <a href="banner-flags.html" class="pl-2 hover:text-white transition-colors">Banner Flags</a>
+            <a href="a-frame-signs.html" class="pl-2 hover:text-white transition-colors">A-Frame Signs</a>
+            <a href="corflute-signs.html" class="pl-2 hover:text-white transition-colors">Corflute Signs</a>
+            <a href="aluminium-signs.html" class="pl-2 hover:text-white transition-colors">Aluminium Signs</a>
+            <a href="marketing-menu-signs.html" class="pl-2 hover:text-white transition-colors">Marketing & Menu Signs</a>
+            <a href="stickers-labels.html" class="pl-2 hover:text-white transition-colors">Stickers & Labels</a>
+            <a href="our-portfolio.html" class="hover:text-white transition-colors mt-2">Portfolio</a>
+            <a href="about-us.html" class="hover:text-white transition-colors">About</a>
+            <a href="contact-us.html" class="hover:text-white transition-colors">Contact</a>
+            <a href="contact-us.html" class="bg-brand-orange text-white px-6 py-2.5 rounded-full text-sm font-bold text-center mt-2">Get Quote</a>
         </nav>
     </div>
 </header>
@@ -85,7 +85,7 @@ FOOTER_HTML = '''    <footer class="bg-brand-dark pt-20 pb-8 border-t border-whi
             <div class="grid md:grid-cols-3 gap-12 mb-16">
                 <div>
                     <!-- TODO: Replace with <img src="logo.png" alt="Budget Pro Solutions" class="h-8"> -->
-                    <a href="HOME.HTML" class="font-display font-bold text-3xl text-white mb-6 inline-block">BUDGET<span class="text-brand-orange">PRO</span></a>
+                    <a href="index.html" class="font-display font-bold text-3xl text-white mb-6 inline-block">BUDGET<span class="text-brand-orange">PRO</span></a>
                     <p class="text-white/40 text-sm leading-relaxed mb-6">
                         Specializing in the production, installation, and management of general signage and high-quality visual solutions across AU/NZ to boost brand exposure.
                     </p>
@@ -93,18 +93,18 @@ FOOTER_HTML = '''    <footer class="bg-brand-dark pt-20 pb-8 border-t border-whi
                 <div>
                     <h4 class="text-white font-bold mb-6 tracking-wide">Solutions</h4>
                     <ul class="space-y-3 text-white/40 text-sm">
-                        <li><a href="Large Format Printing.HTML" class="hover:text-white transition-colors">Large Format Printing</a></li>
-                        <li><a href="Vehicle Signage.HTML" class="hover:text-white transition-colors">Vehicle Signage & Wraps</a></li>
-                        <li><a href="Corporate Signage.HTML" class="hover:text-white transition-colors">Corporate Signage</a></li>
-                        <li><a href="Window Signs.HTML" class="hover:text-white transition-colors">Window Signs & Graphics</a></li>
-                        <li><a href="Vinyl & Mesh Banners.HTML" class="hover:text-white transition-colors">Vinyl & Mesh Banners</a></li>
-                        <li><a href="Cut Vinyl Graphics.HTML" class="hover:text-white transition-colors">Cut Vinyl Graphics</a></li>
-                        <li><a href="Banner Flags.HTML" class="hover:text-white transition-colors">Banner Flags</a></li>
-                        <li><a href="A-Frame Signs.HTML" class="hover:text-white transition-colors">A-Frame Signs</a></li>
-                        <li><a href="Corflute Signs.HTML" class="hover:text-white transition-colors">Corflute Signs</a></li>
-                        <li><a href="Aluminium Signs.HTML" class="hover:text-white transition-colors">Aluminium Signs</a></li>
-                        <li><a href="Marketing & Menu Signs.HTML" class="hover:text-white transition-colors">Marketing & Menu Signs</a></li>
-                        <li><a href="Stickers & Labels.HTML" class="hover:text-white transition-colors">Stickers & Labels</a></li>
+                        <li><a href="large-format-printing.html" class="hover:text-white transition-colors">Large Format Printing</a></li>
+                        <li><a href="vehicle-signage.html" class="hover:text-white transition-colors">Vehicle Signage & Wraps</a></li>
+                        <li><a href="corporate-signage.html" class="hover:text-white transition-colors">Corporate Signage</a></li>
+                        <li><a href="window-signs.html" class="hover:text-white transition-colors">Window Signs & Graphics</a></li>
+                        <li><a href="vinyl-mesh-banners.html" class="hover:text-white transition-colors">Vinyl & Mesh Banners</a></li>
+                        <li><a href="cut-vinyl-graphics.html" class="hover:text-white transition-colors">Cut Vinyl Graphics</a></li>
+                        <li><a href="banner-flags.html" class="hover:text-white transition-colors">Banner Flags</a></li>
+                        <li><a href="a-frame-signs.html" class="hover:text-white transition-colors">A-Frame Signs</a></li>
+                        <li><a href="corflute-signs.html" class="hover:text-white transition-colors">Corflute Signs</a></li>
+                        <li><a href="aluminium-signs.html" class="hover:text-white transition-colors">Aluminium Signs</a></li>
+                        <li><a href="marketing-menu-signs.html" class="hover:text-white transition-colors">Marketing & Menu Signs</a></li>
+                        <li><a href="stickers-labels.html" class="hover:text-white transition-colors">Stickers & Labels</a></li>
                     </ul>
                 </div>
                 <div>

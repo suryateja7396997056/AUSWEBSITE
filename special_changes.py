@@ -1,8 +1,8 @@
 import os
 import re
 
-# ========== HOME.HTML ==========
-with open('HOME.HTML', 'r', encoding='utf-8') as f:
+# ========== index.html ==========
+with open('index.html', 'r', encoding='utf-8') as f:
     home = f.read()
 
 # 1. Remove LED Neon Signs from marquee
@@ -10,7 +10,7 @@ home = home.replace(' <span>★ LED Neon Signs</span>', '')
 
 # 2. Add hero logo with TODO comment before the badge
 hero_logo = '''                <!-- TODO: Replace with <img src="logo.png" alt="Budget Pro Solutions" class="h-8"> -->
-                <a href="HOME.HTML" class="font-display font-bold text-3xl text-white mb-6 inline-block">BUDGET<span class="text-brand-orange">PRO</span></a>
+                <a href="index.html" class="font-display font-bold text-3xl text-white mb-6 inline-block">BUDGET<span class="text-brand-orange">PRO</span></a>
                 <div class="inline-flex items-center gap-2 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full border border-brand-orange/20 font-mono text-xs font-bold tracking-widest uppercase mb-6 animate-float">'''
 home = home.replace(
     '''                <div class="inline-flex items-center gap-2 bg-brand-orange/10 text-brand-orange px-4 py-2 rounded-full border border-brand-orange/20 font-mono text-xs font-bold tracking-widest uppercase mb-6 animate-float">''',
@@ -46,7 +46,7 @@ new_flagship = '''                <div class="bg-white rounded-3xl p-8 shadow-sm
                     <p class="text-gray-600 text-sm leading-relaxed mb-6">
                         Precision-cut vinyl lettering and decals for vehicles, windows, walls, and floors. We use premium cast vinyl for crisp edges and long-term adhesion that withstands harsh AU/NZ conditions.
                     </p>
-                    <a href="Cut Vinyl Graphics.HTML" class="inline-flex items-center gap-2 text-brand-teal font-bold text-sm tracking-wide group hover:underline">
+                    <a href="cut-vinyl-graphics.html" class="inline-flex items-center gap-2 text-brand-teal font-bold text-sm tracking-wide group hover:underline">
                         Explore Service <i class="fas fa-arrow-right transform group-hover:translate-x-1 transition-transform"></i>
                     </a>
                 </div>'''
@@ -125,12 +125,12 @@ new_services_grid = '''            <div class="grid md:grid-cols-2 lg:grid-cols-
 if old_grid_start != -1 and old_grid_end != -1:
     home = home[:old_grid_start] + new_services_grid + home[old_grid_end:]
 
-with open('HOME.HTML', 'w', encoding='utf-8') as f:
+with open('index.html', 'w', encoding='utf-8') as f:
     f.write(home)
-print('Updated HOME.HTML')
+print('Updated index.html')
 
-# ========== Our Portfolio.HTML ==========
-with open('Our Portfolio.HTML', 'r', encoding='utf-8') as f:
+# ========== our-portfolio.html ==========
+with open('our-portfolio.html', 'r', encoding='utf-8') as f:
     port = f.read()
 
 old_gallery = '''                <div class="img-reveal rounded-3xl shadow-md" data-aos="zoom-in" data-aos-delay="100">
@@ -151,12 +151,12 @@ new_gallery = '''                <div class="img-reveal rounded-3xl shadow-md" d
 
 port = port.replace(old_gallery, new_gallery)
 
-with open('Our Portfolio.HTML', 'w', encoding='utf-8') as f:
+with open('our-portfolio.html', 'w', encoding='utf-8') as f:
     f.write(port)
-print('Updated Our Portfolio.HTML')
+print('Updated our-portfolio.html')
 
-# ========== Contact Us.HTML ==========
-with open('Contact Us.HTML', 'r', encoding='utf-8') as f:
+# ========== contact-us.html ==========
+with open('contact-us.html', 'r', encoding='utf-8') as f:
     contact = f.read()
 
 # Change grid from 3 to 4 columns and add address card
@@ -239,8 +239,8 @@ new_contact_grid = '''    <section class="relative -mt-20 z-20 pb-20">
 
 contact = contact.replace(old_contact_grid, new_contact_grid)
 
-with open('Contact Us.HTML', 'w', encoding='utf-8') as f:
+with open('contact-us.html', 'w', encoding='utf-8') as f:
     f.write(contact)
-print('Updated Contact Us.HTML')
+print('Updated contact-us.html')
 
 print('Special changes done.')

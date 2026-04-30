@@ -1,4 +1,4 @@
-with open('HOME.HTML', 'r', encoding='utf-8') as f:
+with open('index.html', 'r', encoding='utf-8') as f:
     content = f.read()
 
 old_section = '''    <section class="bg-white py-24">
@@ -134,8 +134,8 @@ new_section = '''    <section class="bg-white py-24">
 
 if old_section in content:
     content = content.replace(old_section, new_section)
-    with open('HOME.HTML', 'w', encoding='utf-8') as f:
+    with open('index.html', 'w', encoding='utf-8') as f:
         f.write(content)
-    print('HOME.HTML services grid fixed successfully')
+    print('index.html services grid fixed successfully')
 else:
-    print('ERROR: Could not find old section in HOME.HTML')
+    print('ERROR: Could not find old section in index.html')

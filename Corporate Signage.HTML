@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>Corporate & Custom Signage | Budget Pro Solutions</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#ea580c',
+                            yellow: '#f59e0b',
+                            teal: '#0d9488',
+                            navy: '#042f2e',
+                            dark: '#020617',
+                        },
+                    },
+                    fontFamily: {
+                        display: ['Cormorant Garamond', 'serif'],
+                        body: ['Outfit', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* BASE STYLES */
+        body { font-family: 'Outfit', sans-serif; background: #fafaf8; color: #1a1a1a; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+        
+        /* NOISE TEXTURE FOR PREMIUM FEEL */
+        .noise-overlay::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; }
+
+        /* GRADIENTS & SHIMMERS */
+        .section-dark { background: linear-gradient(135deg, #020617 0%, #042f2e 50%, #020617 100%); }
+        .section-cream { background: #faf9f6; }
+        
+        .shimmer-text { background: linear-gradient(90deg, #ea580c, #f59e0b, #fcd34d, #ea580c); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 5s linear infinite; }
+        @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+        
+        .gradient-text-teal { background: linear-gradient(135deg, #0d9488, #2dd4bf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* ANIMATIONS */
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        @keyframes rotate-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .deco-ring { position: absolute; border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 50%; animation: rotate-slow 35s linear infinite; pointer-events: none; }
+
+        /* CARD EFFECTS */
+        .card-lift { transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease; }
+        .card-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); }
+        .img-reveal { overflow: hidden; border-radius: 1.5rem; }
+        .img-reveal img { transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .img-reveal:hover img { transform: scale(1.06); }
+
+        /* BUTTON SHINE */
+        .btn-shine { position: relative; overflow: hidden; }
+        .btn-shine::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent); transition: left 0.6s ease; }
+        .btn-shine:hover::after { left: 100%; }
+    </style>
+</head>
+
+<body class="noise-overlay text-gray-800">
+
+    <section class="relative min-h-[80vh] section-dark flex items-center overflow-hidden py-20">
+        <div class="deco-ring" style="width:700px;height:700px;top:-200px;right:-150px;border-color:rgba(234,88,12,0.15)"></div>
+        <div class="deco-ring" style="width:500px;height:500px;bottom:-100px;left:-100px;animation-direction:reverse;border-color:rgba(13,148,136,0.15)"></div>
+        
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1600&q=80" alt="Corporate Office Signage" class="w-full h-full object-cover opacity-20" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/90 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full text-center">
+            <div class="inline-flex items-center gap-2 bg-brand-teal/10 text-brand-teal px-4 py-2 rounded-full border border-brand-teal/30 font-mono text-xs font-bold tracking-widest uppercase mb-6 animate-float">
+                <i class="fas fa-building"></i> Executive Branding
+            </div>
+            
+            <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6" data-aos="fade-up">
+                First Impressions. <br>
+                <span class="shimmer-text">Built to Last.</span>
+            </h1>
+            
+            <p class="text-white/70 text-lg md:text-xl max-w-3xl mx-auto mb-10 font-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                Your physical workspace is the ultimate reflection of your corporate identity. From breathtaking 3D reception logos to seamless architectural wayfinding, we engineer signage that commands respect.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://wa.me/64212178989?text=Hi!%20I%20would%20like%20to%20discuss%20a%20Corporate%20Signage%20project." 
+                   class="btn-shine bg-brand-teal hover:bg-teal-600 text-white px-10 py-4 rounded-full text-sm font-bold transition-all flex items-center gap-2 shadow-lg shadow-teal-600/30">
+                    <span>Consult Our Corporate Experts</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-cream py-24 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div class="order-2 lg:order-1 relative" data-aos="fade-right">
+                <div class="img-reveal shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32b7?w=800&q=80" alt="Corporate Reception Signage" class="w-full h-auto object-cover" />
+                </div>
+                <div class="absolute -bottom-10 -right-8 bg-brand-dark p-6 rounded-2xl shadow-xl border border-white/10 max-w-xs animate-float hidden md:block">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fas fa-handshake text-brand-orange text-xl"></i>
+                        <span class="font-bold text-white">Trust Amplified</span>
+                    </div>
+                    <p class="text-white/70 text-sm">Studies show that high-end lobby signage subconsciously increases client trust and perceived company value.</p>
+                </div>
+            </div>
+            
+            <div class="order-1 lg:order-2" data-aos="fade-left">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-6">More Than Just A Name On <span class="gradient-text-teal">A Wall.</span></h2>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    Corporate signage is the silent ambassador of your brand. It communicates your company’s stability, attention to detail, and industry authority before a single word is spoken.
+                </p>
+                <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                    At Budget Pro Solutions, we understand architectural integration. We don't just stick a logo on a wall; we work with the interior design, lighting, and textures of your space to create a harmonious, premium aesthetic using materials like brushed aluminium, frosted acrylic, and custom illumination.
+                </p>
+                <div class="grid grid-cols-2 gap-6">
+                    <div class="border-l-4 border-brand-teal pl-4">
+                        <h4 class="font-bold text-gray-900 text-xl mb-1">Architectural Fit</h4>
+                        <p class="text-sm text-gray-500">Designed to blend flawlessly with modern office interiors.</p>
+                    </div>
+                    <div class="border-l-4 border-brand-orange pl-4">
+                        <h4 class="font-bold text-gray-900 text-xl mb-1">Brand Consistency</h4>
+                        <p class="text-sm text-gray-500">Perfect color-matching to your strict corporate brand guidelines.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Complete Office <span class="text-brand-orange italic">Signage Solutions</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">From the exterior facade to the boardroom glass, we cover every inch of your facility.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-brand-teal/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-layer-group text-2xl text-brand-teal"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">3D Reception & Lobby Signs</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Make your lobby unforgettable. We craft stunning three-dimensional logos using laser-cut acrylic, stainless steel, or wood. Options include halo-lighting or edge-lit illumination for a truly premium feel.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-orange/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-map-signs text-2xl text-brand-orange"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Wayfinding & Directories</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Help visitors navigate your building effortlessly. We design and install sleek elevator directory boards, floor-level indicators, and directional arrows that look like a natural part of the architecture.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-brand-yellow/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-border-style text-2xl text-brand-yellow"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Building Fascia & Exterior</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Command the street view. From massive illuminated lightboxes to large-scale aluminium composite panels (ACP), we ensure your building stands out clearly to passing traffic and pedestrians.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-brand-navy/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-door-closed text-2xl text-brand-navy"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Door & Room Nameplates</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Professional identification for every office. We provide modular slider signs (In/Out), brushed metal plaques, and sleek acrylic nameplates for meeting rooms, executive suites, and amenities.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-teal/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-window-maximize text-2xl text-brand-teal"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Frosted Glass & Privacy Films</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Add privacy to glass-walled meeting rooms without sacrificing natural light. We can custom-cut frosted vinyl to feature your company logo, geometric patterns, or elegant safety strips.
+                    </p>
+                </div>
+
+                <div class="bg-brand-dark rounded-3xl p-8 border border-white/10 card-lift relative overflow-hidden text-white" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-teal-900/40 via-transparent to-transparent"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 border border-white/20">
+                            <i class="fas fa-drafting-compass text-2xl text-white"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold mb-3">Full Office Fit-Outs</h3>
+                        <p class="text-white/60 text-sm leading-relaxed mb-6">
+                            Opening a new office or rebranding? We handle the entire visual fit-out. Enjoy bulk pricing and a dedicated project manager to ensure total brand consistency across all elements.
+                        </p>
+                        <a href="#contact" class="text-brand-teal font-bold text-sm hover:underline">Discuss Your Office Project &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-white mb-4">The Elements of <span class="text-brand-orange">Prestige</span></h2>
+                <p class="text-white/60 max-w-2xl mx-auto text-lg">We strictly utilize architectural-grade materials to ensure your signage looks expensive and lasts for decades.</p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="0">
+                    <i class="fas fa-gem text-3xl text-brand-teal mb-4"></i>
+                    <h4 class="text-white font-bold text-xl mb-4 border-b border-white/10 pb-4">Premium Acrylic</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">Laser-cut for absolute precision. Available in high-gloss, matte, or clear finishes. Perfect for creating sleek, modern 3D lettering that stands off the wall.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-cubes text-3xl text-brand-orange mb-4"></i>
+                    <h4 class="text-white font-bold text-xl mb-4 border-b border-white/10 pb-4">Brushed Metals</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">Aluminium, stainless steel, and brass finishes convey stability and luxury. Ideal for law firms, financial institutions, and executive suites.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-8 rounded-2xl backdrop-blur-sm" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-lightbulb text-3xl text-brand-yellow mb-4"></i>
+                    <h4 class="text-white font-bold text-xl mb-4 border-b border-white/10 pb-4">Architectural Illumination</h4>
+                    <p class="text-white/70 text-sm leading-relaxed">Subtle, high-end lighting. We embed warm or cool LED modules behind opaque metal letters to create a stunning "halo" glow against your lobby wall.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-brand-teal text-center px-6">
+        <div class="max-w-4xl mx-auto" data-aos="zoom-in">
+            <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">Upgrade Your Corporate Image.</h2>
+            <p class="text-white/90 text-xl font-medium mb-10 max-w-2xl mx-auto">Contact Budget Pro Solutions today. Our corporate signage experts will conduct a site visit, provide material samples, and deliver a comprehensive proposal.</p>
+            <a href="https://wa.me/64212178989?text=Hi%20Budget%20Pro,%20I%20would%20like%20to%20schedule%20a%20consultation%20for%20Corporate%20Signage." 
+               class="inline-flex items-center gap-3 bg-brand-dark text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-gray-900 transition-all shadow-2xl hover:-translate-y-2">
+                Book a Free Site Consultation <i class="fab fa-whatsapp text-green-400"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark pt-20 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <h3 class="font-display font-bold text-3xl text-white mb-6">BUDGET<span class="text-brand-orange">PRO</span></h3>
+                    <p class="text-white/40 text-sm leading-relaxed mb-6">
+                        Specializing in the production, installation, and management of general signage and high-quality visual solutions across AU/NZ to boost brand exposure.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 tracking-wide">Solutions</h4>
+                    <ul class="space-y-3 text-white/40 text-sm">
+                        <li>Large Format Printing</li>
+                        <li>Vehicle Signage & Wraps</li>
+                        <li>Corporate & Custom Signage</li>
+                        <li>Illuminated & LED Signs</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 tracking-wide">Get In Touch</h4>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-brand-orange w-4"></i> enquiry@budgetprosolutions.com.au
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-brand-orange w-4"></i> +64 212178989
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-white/30 text-xs font-mono uppercase tracking-widest">&copy; 2026 Budget Pro Solutions. All Rights Reserved.</p>
+                <div class="flex gap-4 text-white/40">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/64212178989?text=Hi!%20I%20have%20a%20question%20about%20Corporate%20Signage." 
+       target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 bg-[#25D366] text-white px-5 py-3 rounded-full flex items-center gap-2 shadow-[0_10px_25px_rgba(37,211,102,0.4)] z-50 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(37,211,102,0.6)] transition-all duration-300">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        <span class="font-bold tracking-wide pr-1">Support</span>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
+    </script>
+</body>
+</html>

@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1.0" />
+    <title>LED Neon Signage | Budget Pro Solutions</title>
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700;800&family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet" />
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            orange: '#ea580c',
+                            yellow: '#f59e0b',
+                            teal: '#0d9488',
+                            navy: '#042f2e',
+                            dark: '#020617',
+                            neonPink: '#ff2a85',
+                            neonBlue: '#00f3ff'
+                        },
+                    },
+                    fontFamily: {
+                        display: ['Cormorant Garamond', 'serif'],
+                        body: ['Outfit', 'sans-serif'],
+                        mono: ['Space Grotesk', 'monospace'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* BASE STYLES */
+        body { font-family: 'Outfit', sans-serif; background: #fafaf8; color: #1a1a1a; overflow-x: hidden; }
+        h1, h2, h3, h4 { font-family: 'Cormorant Garamond', serif; }
+        
+        /* NOISE TEXTURE FOR PREMIUM FEEL */
+        .noise-overlay::before { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; }
+
+        /* GRADIENTS & SHIMMERS */
+        .section-dark { background: linear-gradient(135deg, #020617 0%, #042f2e 50%, #020617 100%); }
+        .section-cream { background: #faf9f6; }
+        
+        .shimmer-text { background: linear-gradient(90deg, #ff2a85, #f59e0b, #00f3ff, #ff2a85); background-size: 200% auto; -webkit-background-clip: text; -webkit-text-fill-color: transparent; animation: shimmer 5s linear infinite; }
+        @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+        
+        .gradient-text-teal { background: linear-gradient(135deg, #0d9488, #2dd4bf); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* NEON GLOW EFFECTS */
+        .neon-glow-pink { text-shadow: 0 0 10px rgba(255,42,133,0.8), 0 0 20px rgba(255,42,133,0.4); }
+        .neon-glow-blue { box-shadow: 0 0 20px rgba(0,243,255,0.4), inset 0 0 10px rgba(0,243,255,0.2); border-color: rgba(0,243,255,0.5); }
+
+        /* ANIMATIONS */
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-20px); } }
+        .animate-float { animation: float 6s ease-in-out infinite; }
+        
+        @keyframes rotate-slow { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+        .deco-ring { position: absolute; border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 50%; animation: rotate-slow 35s linear infinite; pointer-events: none; }
+
+        /* CARD EFFECTS */
+        .card-lift { transition: transform 0.4s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.4s ease; }
+        .card-lift:hover { transform: translateY(-8px); box-shadow: 0 20px 60px rgba(0, 0, 0, 0.08); }
+        .img-reveal { overflow: hidden; border-radius: 1.5rem; }
+        .img-reveal img { transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1); }
+        .img-reveal:hover img { transform: scale(1.06); }
+
+        /* BUTTON SHINE */
+        .btn-shine { position: relative; overflow: hidden; }
+        .btn-shine::after { content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%; background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent); transition: left 0.6s ease; }
+        .btn-shine:hover::after { left: 100%; }
+    </style>
+</head>
+
+<body class="noise-overlay text-gray-800">
+
+    <section class="relative min-h-[80vh] section-dark flex items-center overflow-hidden py-20">
+        <div class="absolute top-[-100px] right-[-100px] w-[500px] h-[500px] bg-brand-neonPink/20 rounded-full blur-[100px] pointer-events-none animate-float"></div>
+        <div class="absolute bottom-[-100px] left-[-100px] w-[600px] h-[600px] bg-brand-neonBlue/20 rounded-full blur-[120px] pointer-events-none animate-float" style="animation-delay: 2s;"></div>
+        
+        <div class="absolute inset-0 z-0">
+            <img src="https://images.unsplash.com/photo-1550684848-fac1c5b4e853?w=1600&q=80" alt="LED Neon Sign" class="w-full h-full object-cover opacity-30" />
+            <div class="absolute inset-0 bg-gradient-to-t from-brand-dark via-brand-dark/80 to-transparent"></div>
+        </div>
+
+        <div class="max-w-7xl mx-auto px-6 relative z-10 w-full text-center">
+            <div class="inline-flex items-center gap-2 bg-brand-neonBlue/10 text-brand-neonBlue px-4 py-2 rounded-full border border-brand-neonBlue/30 font-mono text-xs font-bold tracking-widest uppercase mb-6 animate-float neon-glow-blue">
+                <i class="fas fa-bolt text-brand-neonPink"></i> Illuminated Branding
+            </div>
+            
+            <h1 class="font-display text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6" data-aos="fade-up">
+                Light Up The Night. <br>
+                <span class="shimmer-text">LED Neon Signage.</span>
+            </h1>
+            
+            <p class="text-white/70 text-lg md:text-xl max-w-3xl mx-auto mb-10 font-light leading-relaxed" data-aos="fade-up" data-aos-delay="100">
+                Transform your workspace, storefront, or event with custom-designed LED Neon. Eye-catching, highly photogenic, and energy-efficient—our illuminated signs guarantee your business is seen, day or night.
+            </p>
+            
+            <div class="flex flex-wrap justify-center gap-4" data-aos="fade-up" data-aos-delay="200">
+                <a href="https://wa.me/64212178989?text=Hi!%20I%20would%20like%20a%20quote%20for%20a%20custom%20LED%20Neon%20Sign." 
+                   class="btn-shine bg-brand-neonPink hover:bg-pink-600 text-white px-10 py-4 rounded-full text-sm font-bold transition-all flex items-center gap-2 shadow-[0_0_30px_rgba(255,42,133,0.5)]">
+                    <span>Design Your Neon Sign</span>
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-cream py-24 border-b border-gray-200">
+        <div class="max-w-7xl mx-auto px-6 grid lg:grid-cols-2 gap-16 items-center">
+            <div data-aos="fade-right">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-6">The Modern Evolution of <span class="text-brand-neonPink">Illumination.</span></h2>
+                <p class="text-gray-600 text-lg leading-relaxed mb-6">
+                    Classic glass neon has a nostalgic charm, but it is fragile, expensive to run, and contains hazardous gases. Budget Pro Solutions utilizes state-of-the-art <strong>LED Neon Flex</strong> technology to deliver that iconic glow without the drawbacks.
+                </p>
+                <p class="text-gray-600 text-lg leading-relaxed mb-8">
+                    Our custom LED neon signs are meticulously handcrafted by molding flexible silicone tubes embedded with high-intensity LED lights onto premium acrylic backing. The result is a safe, durable, and breathtakingly bright sign.
+                </p>
+                
+                <div class="space-y-4">
+                    <div class="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm border border-gray-100">
+                        <div class="w-12 h-12 bg-green-500/10 text-green-600 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-leaf text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Energy Efficient & Eco-Friendly</h4>
+                            <p class="text-sm text-gray-500">Consumes up to 80% less electricity than traditional glass neon, keeping your running costs incredibly low.</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-4 p-4 bg-white rounded-2xl shadow-sm border border-gray-100">
+                        <div class="w-12 h-12 bg-blue-500/10 text-blue-600 rounded-xl flex items-center justify-center flex-shrink-0"><i class="fas fa-hammer text-xl"></i></div>
+                        <div>
+                            <h4 class="font-bold text-gray-900">Shatterproof & Safe</h4>
+                            <p class="text-sm text-gray-500">Made from durable silicone and acrylic. No glass to break, no toxic mercury, and safe to touch (low heat emission).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="relative" data-aos="fade-left">
+                <div class="img-reveal shadow-2xl">
+                    <img src="https://images.unsplash.com/photo-1552084117-56a98a98319f?w=800&q=80" alt="Cafe Neon Sign" class="w-full h-auto object-cover" />
+                </div>
+                <div class="absolute -bottom-8 -right-8 bg-brand-dark p-6 rounded-2xl shadow-[0_0_40px_rgba(0,243,255,0.2)] border border-brand-neonBlue/30 max-w-xs animate-float hidden md:block">
+                    <div class="flex items-center gap-3 mb-2">
+                        <i class="fas fa-camera text-brand-neonBlue text-xl"></i>
+                        <span class="font-bold text-white">Instagram Ready</span>
+                    </div>
+                    <p class="text-white/70 text-sm">Neon signs act as organic photo-ops, encouraging customers to share your brand on social media.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bg-white py-24">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-gray-900 mb-4">Applications That <span class="text-brand-orange italic">Shine</span></h2>
+                <p class="text-gray-500 max-w-2xl mx-auto text-lg">From corporate boardrooms to bustling nightclubs, LED neon adapts to any environment.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="0">
+                    <div class="w-14 h-14 bg-brand-neonPink/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-coffee text-2xl text-brand-neonPink"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Hospitality & Retail</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Set the mood in cafes, bars, restaurants, and boutiques. Use glowing catchphrases or illuminated logos to draw foot traffic in from the street and create an unforgettable interior vibe.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="100">
+                    <div class="w-14 h-14 bg-brand-teal/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-building text-2xl text-brand-teal"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Corporate Offices</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Modernize your reception area or boardroom. An LED neon rendition of your corporate logo screams innovation, success, and a forward-thinking company culture.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift" data-aos="fade-up" data-aos-delay="200">
+                    <div class="w-14 h-14 bg-brand-yellow/10 rounded-xl flex items-center justify-center mb-6">
+                        <i class="fas fa-glass-cheers text-2xl text-brand-yellow"></i>
+                    </div>
+                    <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Events & Weddings</h3>
+                    <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                        Create the ultimate photo backdrop. We design custom illuminated names, dates, or hashtags for weddings, corporate galas, and trade show booths that guests will love to photograph.
+                    </p>
+                </div>
+
+                <div class="bg-gray-50 rounded-3xl p-8 border border-gray-100 card-lift lg:col-span-2" data-aos="fade-up" data-aos-delay="0">
+                    <div class="grid md:grid-cols-2 gap-8 items-center">
+                        <div>
+                            <div class="w-14 h-14 bg-brand-neonBlue/10 rounded-xl flex items-center justify-center mb-6">
+                                <i class="fas fa-tools text-2xl text-brand-neonBlue"></i>
+                            </div>
+                            <h3 class="font-display text-2xl font-bold text-gray-900 mb-3">Custom Backing Options</h3>
+                            <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                                The way your sign is mounted is just as important as the glow. We offer multiple premium backing styles to perfectly match your wall or hanging requirements.
+                            </p>
+                        </div>
+                        <ul class="space-y-3">
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-brand-neonPink"></i> <span class="text-sm font-bold text-gray-700">Clear Acrylic Contour Cut</span></li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-brand-neonPink"></i> <span class="text-sm font-bold text-gray-700">Solid Color Acrylic Board</span></li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-brand-neonPink"></i> <span class="text-sm font-bold text-gray-700">UV Printed Backing (Logo + Neon)</span></li>
+                            <li class="flex items-center gap-3"><i class="fas fa-check text-brand-neonPink"></i> <span class="text-sm font-bold text-gray-700">Metal Grid or Mesh Mount</span></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="bg-brand-dark rounded-3xl p-8 border border-white/10 card-lift relative overflow-hidden text-white" data-aos="fade-up" data-aos-delay="200">
+                    <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_right,_var(--tw-gradient-stops))] from-brand-neonPink/30 via-transparent to-transparent"></div>
+                    <div class="relative z-10">
+                        <div class="w-14 h-14 bg-white/10 rounded-xl flex items-center justify-center mb-6 border border-white/20">
+                            <i class="fas fa-paint-brush text-2xl text-white"></i>
+                        </div>
+                        <h3 class="font-display text-2xl font-bold mb-3">Free Design Mockup</h3>
+                        <p class="text-white/60 text-sm leading-relaxed mb-6">
+                            Not sure how your logo translates to neon? Send us your file, and our designers will create a digital proof showing exactly how the final illuminated sign will look.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-dark py-24 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto px-6 relative z-10">
+            <div class="text-center mb-16" data-aos="fade-up">
+                <h2 class="font-display text-4xl lg:text-5xl font-bold text-white mb-4">Engineered to <span class="text-brand-neonBlue">Outshine.</span></h2>
+                <p class="text-white/60 max-w-2xl mx-auto text-lg">Every Budget Pro neon sign comes with premium hardware and guaranteed reliability.</p>
+            </div>
+
+            <div class="grid md:grid-cols-4 gap-6 text-center">
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm card-lift" data-aos="zoom-in" data-aos-delay="0">
+                    <i class="fas fa-plug text-3xl text-brand-neonBlue mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2">Plug & Play</h4>
+                    <p class="text-white/50 text-sm">Comes fully assembled with a standard power adapter. Just hang it up and plug it into a standard wall outlet.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm card-lift" data-aos="zoom-in" data-aos-delay="100">
+                    <i class="fas fa-sliders-h text-3xl text-brand-neonPink mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2">Dimmer Control</h4>
+                    <p class="text-white/50 text-sm">Includes a remote control to adjust brightness, perfect for changing the ambiance from day to night.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm card-lift" data-aos="zoom-in" data-aos-delay="200">
+                    <i class="fas fa-hourglass-half text-3xl text-brand-yellow mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2">50,000+ Hours</h4>
+                    <p class="text-white/50 text-sm">Incredibly long lifespan. Even if left on 24 hours a day, your sign will glow brightly for years to come.</p>
+                </div>
+                <div class="bg-white/5 border border-white/10 p-6 rounded-2xl backdrop-blur-sm card-lift" data-aos="zoom-in" data-aos-delay="300">
+                    <i class="fas fa-tools text-3xl text-brand-teal mb-4"></i>
+                    <h4 class="text-white font-bold text-lg mb-2">Easy Install</h4>
+                    <p class="text-white/50 text-sm">Pre-drilled mounting holes and included standoff hardware make wall mounting a breeze for anyone.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-brand-dark relative overflow-hidden text-center px-6 border-t border-white/10">
+        <div class="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-brand-neonBlue/20 via-brand-dark to-brand-dark"></div>
+        <div class="max-w-4xl mx-auto relative z-10" data-aos="zoom-in">
+            <h2 class="font-display text-5xl md:text-6xl font-bold text-white mb-6">Ready to illuminate your brand?</h2>
+            <p class="text-white/80 text-xl font-medium mb-10 max-w-2xl mx-auto">Send us your logo, text, or ideas. We will help you choose the perfect color, size, and backing for your space.</p>
+            <a href="https://wa.me/64212178989?text=Hi%20Budget%20Pro,%20I%20have%20an%20idea%20for%20an%20LED%20Neon%20Sign%20and%20need%20a%20quote." 
+               class="inline-flex items-center gap-3 bg-brand-neonPink text-white px-10 py-5 rounded-full text-lg font-bold hover:bg-pink-600 transition-all shadow-[0_0_30px_rgba(255,42,133,0.5)] hover:-translate-y-2">
+                Get Your Neon Quote <i class="fab fa-whatsapp"></i>
+            </a>
+        </div>
+    </section>
+
+    <footer class="bg-brand-dark pt-20 pb-8 border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-6">
+            <div class="grid md:grid-cols-3 gap-12 mb-16">
+                <div>
+                    <h3 class="font-display font-bold text-3xl text-white mb-6">BUDGET<span class="text-brand-orange">PRO</span></h3>
+                    <p class="text-white/40 text-sm leading-relaxed mb-6">
+                        Specializing in the production, installation, and management of general signage and high-quality visual solutions across AU/NZ to boost brand exposure.
+                    </p>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 tracking-wide">Solutions</h4>
+                    <ul class="space-y-3 text-white/40 text-sm">
+                        <li>Large Format Printing</li>
+                        <li>Vehicle Signage & Wraps</li>
+                        <li class="text-brand-neonBlue">Illuminated & LED Signs</li>
+                        <li>Custom Stickers & Labels</li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-white font-bold mb-6 tracking-wide">Get In Touch</h4>
+                    <ul class="space-y-4 text-white/60 text-sm">
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-envelope text-brand-orange w-4"></i> enquiry@budgetprosolutions.com.au
+                        </li>
+                        <li class="flex items-center gap-3">
+                            <i class="fas fa-phone text-brand-orange w-4"></i> +64 212178989
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-white/10 pt-8 text-center flex flex-col md:flex-row items-center justify-between gap-4">
+                <p class="text-white/30 text-xs font-mono uppercase tracking-widest">&copy; 2026 Budget Pro Solutions. All Rights Reserved.</p>
+                <div class="flex gap-4 text-white/40">
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="hover:text-white transition-colors"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <a href="https://wa.me/64212178989?text=Hi!%20I%20have%20a%20question%20about%20LED%20Neon%20Signage." 
+       target="_blank" rel="noopener noreferrer"
+       class="fixed bottom-6 right-6 lg:bottom-8 lg:right-8 bg-[#25D366] text-white px-5 py-3 rounded-full flex items-center gap-2 shadow-[0_10px_25px_rgba(37,211,102,0.4)] z-50 hover:-translate-y-1 hover:shadow-[0_15px_30px_rgba(37,211,102,0.6)] transition-all duration-300">
+        <i class="fab fa-whatsapp text-2xl"></i>
+        <span class="font-bold tracking-wide pr-1">Support</span>
+    </a>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, easing: 'ease-out-cubic', once: true, offset: 50 });
+    </script>
+</body>
+</html>
